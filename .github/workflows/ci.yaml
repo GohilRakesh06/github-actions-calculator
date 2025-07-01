@@ -25,9 +25,9 @@ jobs:
       - name: build and push docker image
         uses: docker/build-push-action@v6
         with:
-          contents: .
+          context: .
           file: ./Dockerfile
-         # push: true
+          push: false
           tags: |
             rakesh9711/calculator:${{ github.ref_name }}
             rakesh9711/calculator:latest
