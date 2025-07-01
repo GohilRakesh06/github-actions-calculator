@@ -15,7 +15,12 @@ jobs:
     steps:
       - name: checkout the repo code
         uses:  actions/checkout@v4
-
+      # 🔧 Set up Docker Buildx (required for tar export)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          driver: docker-container
+          
       - name: log in to docker hub
         uses: docker/login-action@v3
         with:
