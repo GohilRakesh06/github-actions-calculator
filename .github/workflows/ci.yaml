@@ -27,7 +27,7 @@ jobs:
         with:
           contents: .
           file: ./Dockerfile
-          push: true
+         # push: true
           tags: |
             rakesh9711/calculator:${{ github.ref_name }}
             rakesh9711/calculator:latest
