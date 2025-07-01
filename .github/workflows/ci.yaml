@@ -1,7 +1,7 @@
 name: calculator website deployment on docker  using github actions
-on:
-  release:
-    types: [published]
+on: workflow_dispatch
+  # release:
+  #   types: [published]
 
 jobs:
   push_to_registry:
@@ -31,8 +31,8 @@ jobs:
           tags: |
             rakesh9711/calculator:${{ github.ref_name }}
             rakesh9711/calculator:latest
-      - run: mkdir -p /artifacts
-      - run: echo hello > /artifacts/world.txt
+      - run: sudo mkdir -p /artifacts
+      - run: sudo echo hello > /artifacts/world.txt
       - name: upload docker image as artifact
         uses: actions/upload-artifact@v4
         with:
