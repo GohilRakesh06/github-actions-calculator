@@ -32,7 +32,7 @@ jobs:
             rakesh9711/calculator:${{ github.ref_name }}
             rakesh9711/calculator:latest
       - run: sudo mkdir -p /artifacts
-      - run: sudo echo hello > /artifacts/world.txt
+      - run: sudo sh -c "echo hello > /artifacts/world.txt"
       - name: upload docker image as artifact
         uses: actions/upload-artifact@v4
         with:
